@@ -1,64 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Play, Heart } from "lucide-react";
 import TikTokEmbed from "@/components/ui/TikTokEmbed";
-
-const videos = [
-  {
-    id: "7416859783199853829",
-    title: "Primer vez visitando el Planetario de Medellín",
-    category: "Lugares",
-  },
-  {
-    id: "7418453897410383110",
-    title: "Producto nuevo del D1",
-    category: "unboxing",
-  },
-  {
-    id: "7511742646352661766",
-    title:
-      "¿Vale la pena ir a un brunch de creadoras UGC cuando apenas estás empezando?",
-    category: "UGC",
-  },
-  {
-    id: "7508115920816966918",
-    title: "Vinagre sidra de manzana",
-    category: "alimentacion",
-  },
-  {
-    id: "7506606182367300920",
-    title: "TIP DE BELLEZA PARA CHICAS",
-    category: "lifestyle",
-  },
-  {
-    id: "7509885583708179768",
-    title:
-      "Los ingredientes como pantenol y niacinamida, te dejan la piel suave, calmada y con esa sensación rica de limpieza. Lo has probado ?",
-    category: "wellness",
-  },
-];
-
-const categories = [
-  { id: "todos", label: "Todos" },
-  { id: "alimentacion", label: "Alimentación" },
-  { id: "wellness", label: "Wellness" },
-  { id: "unboxing", label: "Unboxing" },
-  { id: "lifestyle", label: "Lifestyle" },
-  { id: "UGC", label: "UGC" },
-  { id: "Lugares", label: "Lugares" },
-];
-
-const tiktokAcount = "https://www.tiktok.com/@jesstorres_bienestar";
+import { videos, categories } from "@/data";
+import { PORTFOLIO_CONFIG } from "@/config/portfolio";
+import { useVideoFilter } from "@/hooks/useVideoFilter";
 
 export function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState("todos");
-
-  const filteredVideos =
-    activeCategory === "todos"
-      ? videos
-      : videos.filter((video) => video.category === activeCategory);
+  const { activeCategory, setActiveCategory, filteredVideos } =
+    useVideoFilter(videos);
 
   return (
     <section
@@ -109,7 +59,7 @@ export function PortfolioSection() {
                     <TikTokEmbed
                       key={video.id}
                       videoId={video.id.toString()}
-                      username="jesstorres_bienestar"
+                      username={PORTFOLIO_CONFIG.username}
                     />
                   )}
 
@@ -133,9 +83,10 @@ export function PortfolioSection() {
         </div>
 
         <div className="text-center mt-12">
+          {" "}
           <Button
             onClick={() => {
-              window.open(tiktokAcount, "_blank");
+              window.open(PORTFOLIO_CONFIG.tiktokAccount, "_blank");
             }}
             size="lg"
             variant="outline"
