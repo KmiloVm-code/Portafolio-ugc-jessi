@@ -1,6 +1,6 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Heart, MessageCircle, Share2 } from "lucide-react"
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Heart, MessageCircle, Share2 } from "lucide-react";
 
 export function ImagesSection() {
   const images = [
@@ -46,7 +46,7 @@ export function ImagesSection() {
       likes: "1.9K",
       comments: "76",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-white">
@@ -56,8 +56,8 @@ export function ImagesSection() {
             Contenido <span className="text-warm-orange">Visual</span> UGC
           </h2>
           <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body">
-            Imágenes auténticas que cuentan historias. Cada foto está pensada para generar conexión y engagement genuino
-            con tu audiencia.
+            Imágenes auténticas que cuentan historias. Cada foto está pensada
+            para generar conexión y engagement genuino con tu audiencia.
           </p>
         </div>
 
@@ -75,7 +75,9 @@ export function ImagesSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm font-medium mb-3">{image.alt}</p>
+                    <p className="text-white text-sm font-medium mb-3">
+                      {image.alt}
+                    </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-white">
                         <div className="flex items-center space-x-1">
@@ -87,7 +89,11 @@ export function ImagesSection() {
                           <span className="text-sm">{image.comments}</span>
                         </div>
                       </div>
-                      <Button size="icon" variant="ghost" className="text-white hover:bg-white/20">
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        className="text-white hover:bg-white/20"
+                      >
                         <Share2 className="h-4 w-4" />
                       </Button>
                     </div>
@@ -99,11 +105,14 @@ export function ImagesSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-warm-orange hover:bg-warm-orange/90 text-white font-body">
+          <Button
+            size="lg"
+            className="sage-green hover:bg-sage-green/90 text-white font-body"
+          >
             Ver galería completa
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

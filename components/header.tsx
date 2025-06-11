@@ -1,12 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+
+const whatsappLink =
+  "https://api.whatsapp.com/send?phone=573148474403&text=Hola%Jessi,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { href: "#inicio", label: "Inicio" },
@@ -14,14 +17,17 @@ export function Header() {
     { href: "#portafolio", label: "Portafolio" },
     { href: "#servicios", label: "Servicios" },
     { href: "#contacto", label: "Contacto" },
-  ]
+  ];
 
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-sage-green/20 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="#inicio" className="text-2xl font-title font-bold text-sage-green">
-            UGC Creator
+          <Link
+            href="#inicio"
+            className="text-2xl font-title font-bold text-sage-green"
+          >
+            Creadora UGC
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,7 +41,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-sage-green hover:bg-sage-green/90 text-white font-body">Trabajemos Juntas</Button>
+            <Button
+              onClick={() => window.open(whatsappLink, "_blank")}
+              className="bg-sage-green hover:bg-sage-green/90 text-white font-body"
+            >
+              Trabajemos Juntas
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -45,7 +56,11 @@ export function Header() {
             className="md:hidden text-sage-green"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
 
@@ -71,5 +86,5 @@ export function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }

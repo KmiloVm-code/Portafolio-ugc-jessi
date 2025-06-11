@@ -1,7 +1,12 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { MessageCircle, Mail, Calendar } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { MessageCircle, Mail, Calendar } from "lucide-react";
 
 export function FAQSection() {
   const faqs = [
@@ -35,7 +40,7 @@ export function FAQSection() {
       answer:
         "Sí, ofrezco paquetes personalizados para marcas que buscan contenido regular. Esto incluye descuentos por volumen y planificación estratégica de contenido.",
     },
-  ]
+  ];
 
   return (
     <section id="contacto" className="py-20 bg-white">
@@ -45,8 +50,8 @@ export function FAQSection() {
             Preguntas <span className="text-warm-orange">Frecuentes</span>
           </h2>
           <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body">
-            Resuelvo las dudas más comunes sobre mi trabajo como creadora UGC. Si tienes alguna pregunta específica, ¡no
-            dudes en contactarme!
+            Resuelvo las dudas más comunes sobre mi trabajo como creadora UGC.
+            Si tienes alguna pregunta específica, ¡no dudes en contactarme!
           </p>
         </div>
 
@@ -75,42 +80,58 @@ export function FAQSection() {
               ¿Lista para crear contenido increíble juntas?
             </h3>
             <p className="text-lg text-dark-green/80 mb-8 max-w-2xl mx-auto font-body">
-              Cuéntame sobre tu marca y tu visión. Trabajemos juntas para crear contenido auténtico que conecte con tu
-              audiencia y genere resultados reales.
+              Cuéntame sobre tu marca y tu visión. Trabajemos juntas para crear
+              contenido auténtico que conecte con tu audiencia y genere
+              resultados reales.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="border-0 shadow-sm bg-white/80">
                 <CardContent className="p-6 text-center">
                   <MessageCircle className="h-8 w-8 text-dark-green mx-auto mb-3" />
-                  <h4 className="font-title font-semibold text-dark-green mb-2">WhatsApp</h4>
-                  <p className="text-sm text-dark-green/70 font-body">Respuesta inmediata</p>
+                  <h4 className="font-title font-semibold text-dark-green mb-2">
+                    WhatsApp
+                  </h4>
+                  <p className="text-sm text-dark-green/70 font-body">
+                    Respuesta inmediata
+                  </p>
                 </CardContent>
               </Card>
 
               <Card className="border-0 shadow-sm bg-white/80">
                 <CardContent className="p-6 text-center">
                   <Mail className="h-8 w-8 text-dark-green mx-auto mb-3" />
-                  <h4 className="font-title font-semibold text-dark-green mb-2">Email</h4>
-                  <p className="text-sm text-dark-green/70 font-body">Propuestas detalladas</p>
+                  <h4 className="font-title font-semibold text-dark-green mb-2">
+                    Email
+                  </h4>
+                  <p className="text-sm text-dark-green/70 font-body">
+                    Propuestas detalladas
+                  </p>
                 </CardContent>
               </Card>
 
               <Card className="border-0 shadow-sm bg-white/80">
                 <CardContent className="p-6 text-center">
                   <Calendar className="h-8 w-8 text-dark-green mx-auto mb-3" />
-                  <h4 className="font-title font-semibold text-dark-green mb-2">Videollamada</h4>
-                  <p className="text-sm text-dark-green/70 font-body">Conocernos mejor</p>
+                  <h4 className="font-title font-semibold text-dark-green mb-2">
+                    Videollamada
+                  </h4>
+                  <p className="text-sm text-dark-green/70 font-body">
+                    Conocernos mejor
+                  </p>
                 </CardContent>
               </Card>
             </div>
 
-            <Button size="lg" className="bg-dark-green hover:bg-dark-green/90 text-white font-body">
+            <Button
+              size="lg"
+              className="deep-green hover:sage-green text-white font-body"
+            >
               Empezar mi proyecto
             </Button>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
