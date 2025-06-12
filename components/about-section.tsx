@@ -3,9 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Leaf, Camera, Users } from "lucide-react";
-
-const whatsappLink =
-  "https://api.whatsapp.com/send?phone=573148474403&text=Hola%20Jessi,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.";
+import { WhyChooseMeSection } from "./whyChooseMe-section";
 
 export function AboutSection() {
   const features = [
@@ -41,26 +39,29 @@ export function AboutSection() {
           {/* Content Side */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl md:text-5xl font-title font-bold text-sage-green mb-6">
-                ¿Qué es ser creadora{" "}
-                <span className="text-honey-gold">UGC</span>?
+              <h2 className="text-3xl md:text-5xl font-title font-bold text-sage-green mb-8 text-balance">
+                ¿Por qué el contenido{" "}
+                <span className="text-honey-gold">UGC</span> funciona?
               </h2>
-              <p className="text-lg text-deep-green/80 leading-relaxed font-body mb-6">
-                Como creadora de contenido UGC, mi trabajo es dar vida a tu
-                marca a través de contenido auténtico y relatable. No se trata
-                solo de mostrar productos, sino de crear historias reales que
-                conecten con las emociones y necesidades de tu audiencia.
-              </p>
-              <p className="text-lg text-deep-green/80 leading-relaxed font-body">
-                Mi enfoque se centra en la vida saludable, el bienestar y la
-                sostenibilidad, valores que transmito de forma natural y
-                cercana, creando una conexión genuina con cada persona que ve mi
-                contenido.
-              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <p className="text-lg text-deep-green/80 leading-relaxed font-body">
+                  🌱 <strong className="text-honey-gold">79%</strong> cree que
+                  el UGC hace a las marcas más auténticas
+                </p>
+                <p className="text-lg text-deep-green/80 leading-relaxed font-body">
+                  ❤️ <strong className="text-honey-gold">8 de cada 10</strong>{" "}
+                  confían más en recomendaciones auténticas
+                </p>
+                <p className="text-lg text-deep-green/80 leading-relaxed font-body">
+                  🚀 UGC aumenta el engagement hasta en un{" "}
+                  <strong className="text-honey-gold">28%</strong>
+                </p>
+              </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            {/* <div className="grid grid-cols-3 gap-6">
               <div className="text-center p-4 bg-linen rounded-xl shadow-sm">
                 <div className="text-2xl font-title font-bold text-honey-gold">
                   3+
@@ -85,7 +86,7 @@ export function AboutSection() {
                   Visualizaciones totales
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Image Side */}
@@ -104,82 +105,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Why Choose Me Section */}
-        <div className="bg-gradient-to-br from-sage-green/5 to-honey-gold/5 rounded-3xl p-8 md:p-12 mb-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-title font-bold text-sage-green mb-6">
-              ¿Por qué elegirme a{" "}
-              <span className="font-script text-honey-gold">mí</span>?
-            </h3>
-            <p className="text-lg text-deep-green/80 leading-relaxed font-body mb-8">
-              Mi diferencial está en mi capacidad de mostrar cómo alimentarse
-              bien puede ser simple, delicioso y accesible. No trabajo con
-              extremos, sino que inspiro a construir rutinas que nutran el
-              cuerpo, la mente y el planeta.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-honey-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-title font-semibold text-sage-green">
-                      Contenido Auténtico
-                    </h4>
-                    <p className="text-sm text-deep-green/70 font-body">
-                      Experiencias reales, no actuadas
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-honey-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-title font-semibold text-sage-green">
-                      Enfoque Holístico
-                    </h4>
-                    <p className="text-sm text-deep-green/70 font-body">
-                      Cuerpo, mente y planeta en equilibrio
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-honey-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-title font-semibold text-sage-green">
-                      Conexión Emocional
-                    </h4>
-                    <p className="text-sm text-deep-green/70 font-body">
-                      Historias que tocan el corazón
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-honey-gold rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-title font-semibold text-sage-green">
-                      Resultados Medibles
-                    </h4>
-                    <p className="text-sm text-deep-green/70 font-body">
-                      Engagement real y conversiones
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {features.map((feature, index) => (
             <Card
               key={index}
@@ -198,9 +124,9 @@ export function AboutSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Button
             onClick={() => window.open(whatsappLink, "_blank")}
             size="lg"
@@ -208,7 +134,7 @@ export function AboutSection() {
           >
             Hablemos de tu proyecto
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

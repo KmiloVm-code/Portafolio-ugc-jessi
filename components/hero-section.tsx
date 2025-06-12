@@ -8,41 +8,46 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="pt-24 pb-10 sm:pb-0 bg-gradient-to-br from-linen via-white/50 to-honey-gold/10"
+      className="pt-24 pb-10 sm:pb-0 bg-gradient-to-br from-linen via-white/50 to-honey-gold/10 overflow-hidden"
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Imagen first on mobile, second on desktop */}{" "}
           <div className="relative order-1 lg:order-2">
-            <div className="relative z-10 max-w-md mx-auto lg:max-w-lg">
+            <div className="max-w-md mx-auto lg:max-w-lg">
               {" "}
-              <div className="relative overflow-hidden rounded-lg">
+              <img
+                src="/circulo.svg"
+                alt="Creadora de contenido UGC"
+                className="absolute bottom-0 sm:-bottom-16 left-0 z-10 max-h-96 sm:max-h-[650px]"
+              />
+              <div className="relative rounded-lg">
                 <Image
                   src="/portada.webp"
                   alt="Creadora de contenido UGC"
                   width={500}
                   height={600}
                   priority
-                  className="w-full h-auto max-h-[650px] object-cover mask-fade-bottom drop-shadow-lg"
+                  className="relative w-full h-auto max-h-96 sm:max-h-[650px] object-contain mask-fade-bottom drop-shadow-lg z-20"
                 />
               </div>
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-honey-gold/30 rounded-full"></div>
             <div className="absolute -bottom-0 -left-4 w-32 h-32 bg-sage-green/20 rounded-full"></div>
-            <div className="absolute top-1/2 -right-8 w-16 h-16 bg-linen rounded-full"></div>
+            <div className="absolute top-2/3 -right-8 w-16 h-16 bg-sage-green/40 rounded-full"></div>
           </div>
           <div className="space-y-8 animate-fade-in order-2 lg:order-1">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-title font-bold text-sage-green leading-tight">
+              <h1 className="text-4xl md:text-6xl font-title font-bold text-sage-green leading-tight text-balance">
                 Creando contenido{" "}
                 <span className="text-honey-gold">auténtico</span> que{" "}
                 <span className="text-honey-gold">conecta</span>
               </h1>
-              <p className="text-xl text-deep-green/80 leading-relaxed font-body">
-                Soy creadora de contenido UGC especializada en vida saludable y
-                sostenible. Ayudo a las marcas a conectar de forma genuina con
-                su audiencia a través de contenido real y cercano.
+              <p className="text-xl text-deep-green/80 leading-relaxed font-body text-pretty">
+                Soy creadora <strong>UGC</strong> de bienestar, sostenibilidad y
+                belleza real. Colaboro con marcas conscientes para inspirar
+                decisiones más saludables y auténticas.
               </p>
             </div>
 
@@ -69,7 +74,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="flex items-center space-x-8 pt-4">
+            {/* <div className="flex items-center space-x-8 pt-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-honey-gold font-title">
                   50+
@@ -94,7 +99,7 @@ export function HeroSection() {
                   Satisfacción
                 </div>
               </div>{" "}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

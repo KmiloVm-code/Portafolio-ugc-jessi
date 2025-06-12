@@ -21,9 +21,9 @@ export function PortfolioSection() {
             Mi <span className="text-warm-orange">Portafolio</span> de Videos
           </h2>
           <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body">
-            Explora mi trabajo organizado por categorías. Cada video está creado
-            con amor y dedicación para conectar de forma auténtica con la
-            audiencia.
+            Cada video está hecho con intención: mostrar, inspirar y generar
+            confianza. Aquí puedes explorar mi trabajo según el tipo de marca o
+            enfoque.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export function PortfolioSection() {
             }}
             size="lg"
             variant="outline"
-            className="honey-gold text-honey-gold hover:bg-honey-gold/10 group font-body"
+            className="bg-sage-green hover:bg-sage-green/90 text-white group font-body"
           >
             Ver todos mis videos
           </Button>
