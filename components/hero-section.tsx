@@ -18,7 +18,7 @@ export function HeroSection() {
               {" "}
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/portada.png"
+                  src="/portada.webp"
                   alt="Creadora de contenido UGC"
                   width={500}
                   height={600}

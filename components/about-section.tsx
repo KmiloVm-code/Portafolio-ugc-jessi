@@ -92,7 +92,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src="/creadoraUGC.jpg"
+                src="/creadoraUGC.webp"
                 alt="Creadora UGC trabajando"
                 className="w-full h-96 object-cover object-top rounded-2xl shadow-xl"
               />
