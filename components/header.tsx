@@ -27,7 +27,7 @@ export function Header() {
             href="#inicio"
             className="text-2xl font-title font-bold text-sage-green"
           >
-            Creadora UGC
+            Jessi Torres UGC
           </Link>
 
           {/* Desktop Navigation */}

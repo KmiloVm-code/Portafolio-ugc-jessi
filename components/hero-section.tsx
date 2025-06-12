@@ -15,12 +15,14 @@ export function HeroSection() {
           {/* Imagen first on mobile, second on desktop */}{" "}
           <div className="relative order-1 lg:order-2">
             <div className="relative z-10 max-w-md mx-auto lg:max-w-lg">
+              {" "}
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/portada.png"
                   alt="Creadora de contenido UGC"
                   width={500}
                   height={600}
+                  priority
                   className="w-full h-auto max-h-[650px] object-cover mask-fade-bottom drop-shadow-lg"
                 />
               </div>

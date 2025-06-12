@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Youtube, TwitterIcon as Mail, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { TikTok, Instagram, Facebook, Gmail } from "@/components/ui/logos";
 
 export function Footer() {
@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-title font-bold text-honey-gold mb-4">
-              UGC Creator
+              Jessi Torres UGC
             </h3>
             <p className="text-white/80 leading-relaxed font-body">
               Creando contenido auténtico que conecta marcas con audiencias
@@ -82,7 +82,7 @@ export function Footer() {
             que valoran la autenticidad
           </p>
           <p className="text-white/50 text-sm mt-2 font-body">
-            © {new Date().getFullYear()} UGC Creator. Todos los derechos
+            © {new Date().getFullYear()} Jessi Torres UGC. Todos los derechos
             reservados.
           </p>
         </div>
