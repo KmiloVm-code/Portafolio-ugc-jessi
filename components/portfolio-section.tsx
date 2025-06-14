@@ -5,6 +5,7 @@ import TikTokEmbed from "@/components/ui/TikTokEmbed";
 import { videos, categories } from "@/data";
 import { PORTFOLIO_CONFIG } from "@/config/portfolio";
 import { useVideoFilter } from "@/hooks/useVideoFilter";
+import { formatViewsCount } from "@/lib/tiktok-utils";
 
 export function PortfolioSection() {
   const { activeCategory, setActiveCategory, filteredVideos } =
@@ -74,7 +75,7 @@ export function PortfolioSection() {
                     {video.title}
                   </h3>
                   <p className="text-sm text-dark-green/70 font-body">
-                    visualizaciones
+                    {formatViewsCount(video)}
                   </p>
                 </div>
               </div>

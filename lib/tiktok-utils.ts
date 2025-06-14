@@ -1,5 +1,5 @@
 // Utilidades de validación para TikTok Embed
-import type { TikTokPlayerConfig } from "@/types";
+import type { TikTokPlayerConfig, Video, Category } from "@/types";
 
 /**
  * Valida si un string es un ID válido de video de TikTok
@@ -85,3 +85,23 @@ export const getTikTokVideoUrl = (username: string, videoId: string): string => 
   const sanitizedVideoId = sanitizeTikTokVideoId(videoId);
   return `https://www.tiktok.com/@${sanitizedUsername}/video/${sanitizedVideoId}`;
 };
+
+/**
+ * Formatea el número de vistas a un string legible
+ * 
+ * @param views - Número de vistas
+ * @returns String formateado
+ */
+export const formatViewsCount = (video: Pick<Video, 'vistas'>): string => {
+  if (video.vistas === undefined) return "Vistas no disponibles";
+  
+  if (video.vistas >= 1000000) {
+    return `${(video.vistas / 1000000).toFixed(1)}M vistas`;
+  }
+  
+  if (video.vistas >= 1000) {
+    return `${(video.vistas / 1000).toFixed(1)}K vistas`;
+  }
+  
+  return `${video.vistas.toLocaleString()} vistas`;
+}
