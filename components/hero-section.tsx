@@ -41,13 +41,13 @@ export function HeroSection() {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-title font-bold text-sage-green leading-tight text-balance">
                 Creando contenido{" "}
-                <span className="text-honey-gold">auténtico</span> que{" "}
-                <span className="text-honey-gold">conecta</span>
+                <span className="text-honey-gold font-script">auténtico</span>{" "}
+                que <span className="text-honey-gold font-script">conecta</span>
               </h1>
               <p className="text-xl text-deep-green/80 leading-relaxed font-body text-pretty">
-                Soy creadora <strong>UGC</strong> de bienestar, sostenibilidad y
-                belleza real. Colaboro con marcas conscientes para inspirar
-                decisiones más saludables y auténticas.
+                Soy Jessi Torres creadora <strong>UGC</strong> de bienestar,
+                sostenibilidad y belleza real. Colaboro con marcas conscientes
+                para inspirar decisiones más saludables y auténticas.
               </p>
             </div>
 
@@ -64,42 +64,15 @@ export function HeroSection() {
                 Ver mi trabajo
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-honey-gold text-honey-gold hover:bg-honey-gold/10 group font-body"
               >
                 <Play className="mr-2 h-4 w-4" />
                 Ver reel de presentación
-              </Button>
+              </Button> */}
             </div>
-
-            {/* <div className="flex items-center space-x-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-honey-gold font-title">
-                  50+
-                </div>
-                <div className="text-sm text-deep-green/70 font-body">
-                  Marcas colaboradoras
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-honey-gold font-title">
-                  100K+
-                </div>
-                <div className="text-sm text-deep-green/70 font-body">
-                  Visualizaciones
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-honey-gold font-title">
-                  95%
-                </div>
-                <div className="text-sm text-deep-green/70 font-body">
-                  Satisfacción
-                </div>
-              </div>{" "}
-            </div> */}
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export const videos: Video[] = [
     {
     id: "7511742646352661766",
     title:
-      "¿Vale la pena ir a un brunch de creadoras UGC cuando apenas estás empezando?",
+      "¿Vale la pena un brunch UGC?",
     category: "reseñas",
   },
     {
@@ -19,7 +19,7 @@ export const videos: Video[] = [
   },
     {
     id: "7506606182367300920",
-    title: "TIP DE BELLEZA PARA CHICAS",
+    title: "Tip de belleza para chicas",
     category: "tips",
   },
   {
@@ -30,13 +30,13 @@ export const videos: Video[] = [
     {
     id: "7507334119261474104",
     title:
-      "¿Harina? No… ¡hoy cocinamos con quinua ancestral! 😌🌱",
+      "Probando receta con quinua ancestral",
     category: "recetas",
   },
   {
     id: "7512155358178053382",
     title:
-      "Snack dulce y rápido. Literal, 3 ingredientes",
+      "3 ingredientes = snack delicioso",
     category: "recetas",
   },
 ];

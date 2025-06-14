@@ -20,7 +20,7 @@ export function PortfolioSection() {
           <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
             Mi <span className="text-warm-orange">Portafolio</span> de Videos
           </h2>
-          <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body">
+          <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body text-balance">
             Cada video está hecho con intención: mostrar, inspirar y generar
             confianza. Aquí puedes explorar mi trabajo según el tipo de marca o
             enfoque.

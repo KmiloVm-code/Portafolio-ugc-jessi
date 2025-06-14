@@ -18,7 +18,6 @@ export default function Home() {
         <PortfolioSection />
         <WhyChooseMeSection />
         <ImagesSection />
-        <BrandsSection />
         <FAQSection />
       </main>
       <Footer />
