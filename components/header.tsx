@@ -29,7 +29,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-sage-green/20 z-50">
+    <header className="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-sage-green/20 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <button
@@ -75,18 +75,21 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-sage-green/20">
-            <div className="flex flex-col space-y-4 pt-4">
+          <nav className="md:hidden fixed h-dvh inset-0 top-[73px] bg-white/95 backdrop-blur-sm z-40">
+            <div className="flex flex-col space-y-4 p-4 bg-inherit">
               {navItems.map((item) => (
                 <button
                   onClick={() => handleNavClick(item.href)}
                   key={item.href}
-                  className="text-deep-green/80 hover:text-sage-green transition-colors font-medium font-body"
+                  className="text-left py-3 text-deep-green/80 hover:text-sage-green transition-colors font-medium font-body text-lg"
                 >
                   {item.label}
                 </button>
               ))}
-              <Button className="bg-sage-green hover:bg-sage-green/90 text-white w-fit font-body">
+              <Button
+                onClick={() => openWhatsApp()}
+                className="bg-sage-green relative top-12 hover:bg-sage-green/90 text-white w-full mt-6 font-body"
+              >
                 Trabajemos Juntas
               </Button>
             </div>
