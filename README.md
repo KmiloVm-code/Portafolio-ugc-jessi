@@ -123,7 +123,6 @@ El proyecto utiliza configuración estática en `config/portfolio.ts`:
 
 ```typescript
 export const PORTFOLIO_CONFIG = {
-  tiktokAccount: "https://www.tiktok.com/@user_name",
   username: "user_name",
 } as const;
 ```
@@ -141,7 +140,7 @@ Para personalizar el contenido:
 
 El proyecto está desplegado en **Vercel** y se actualiza automáticamente con cada push a la rama principal.
 
-**URL de Producción**: [https://vercel.com/jessicapino4-7179s-projects/v0-creadora-de-contenido-ugc](https://vercel.com/jessicapino4-7179s-projects/v0-creadora-de-contenido-ugc)
+**URL de Producción**: [https://jessitorresugc.vercel.app](https://jessitorresugc.vercel.app)
 
 ### Despliegue Manual
 
