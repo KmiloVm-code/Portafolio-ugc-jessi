@@ -4,6 +4,8 @@ import type React from "react";
 import { useEffect } from "react";
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
+
 export default function ClientLayout({
   children,
 }: {
@@ -67,7 +69,10 @@ export default function ClientLayout({
   }, []);
   return (
     <html lang="es">
-      <body className="font-body">{children}</body>
+      <body className="font-body">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
