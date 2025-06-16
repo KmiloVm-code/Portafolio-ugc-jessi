@@ -11,45 +11,24 @@ export function ImagesSection() {
   const images = [
     {
       id: 1,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Flat lay de ingredientes saludables",
+      src: "/gallery/labial.webp",
+      alt: "Cuidado labial con intención",
       likes: "2.1K",
       comments: "89",
     },
     {
       id: 2,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Momento de autocuidado con productos naturales",
+      src: "/gallery/disco.webp",
+      alt: "Innovación íntima sin tabús",
       likes: "1.8K",
       comments: "67",
     },
     {
       id: 3,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Setup de trabajo desde casa",
+      src: "/gallery/vestido.webp",
+      alt: "Reusar también es tendencia",
       likes: "3.2K",
       comments: "124",
-    },
-    {
-      id: 4,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Productos eco-friendly en uso",
-      likes: "1.5K",
-      comments: "43",
-    },
-    {
-      id: 5,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Preparación de comida saludable",
-      likes: "2.7K",
-      comments: "98",
-    },
-    {
-      id: 6,
-      src: "/placeholder.svg?height=400&width=300",
-      alt: "Rutina de skincare natural",
-      likes: "1.9K",
-      comments: "76",
     },
   ];
 
@@ -66,24 +45,24 @@ export function ImagesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center justify-center">
           {images.map((image) => (
             <Card
               key={image.id}
               className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
             >
-              <div className="relative overflow-hidden">
+              <figure className="relative overflow-hidden w-auto aspect-[4/5]">
                 <img
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-[4/5]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white text-sm font-medium mb-3">
                       {image.alt}
                     </p>
-                    <div className="flex items-center justify-between">
+                    {/* <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-white">
                         <div className="flex items-center space-x-1">
                           <Heart className="h-4 w-4" />
@@ -101,10 +80,10 @@ export function ImagesSection() {
                       >
                         <Share2 className="h-4 w-4" />
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-              </div>
+              </figure>
             </Card>
           ))}
         </div>
