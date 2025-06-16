@@ -6,7 +6,10 @@ import { useSocialLinks } from "@/hooks/useSocialLinks";
 export function WhyChooseMeSection() {
   const { openWhatsApp } = useSocialLinks();
   return (
-    <section className="py-20 bg-gradient-to-br from-sage-green/5 to-honey-gold/5 bg-white">
+    <section
+      id="por-que-elegirme"
+      className="py-20 bg-gradient-to-br from-sage-green/5 to-honey-gold/5 bg-white"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-title font-bold text-sage-green mb-6">

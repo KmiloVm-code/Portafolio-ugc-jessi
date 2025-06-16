@@ -54,7 +54,7 @@ export function ImagesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="contenido" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
