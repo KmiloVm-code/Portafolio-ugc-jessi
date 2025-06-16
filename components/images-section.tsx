@@ -1,8 +1,13 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function ImagesSection() {
+  const { openSocialLink } = useSocialLinks();
+
   const images = [
     {
       id: 1,
@@ -108,6 +113,7 @@ export function ImagesSection() {
           <Button
             size="lg"
             className="sage-green hover:bg-sage-green/90 text-white font-body"
+            onClick={() => openSocialLink("instagram")}
           >
             Ver galería completa
           </Button>

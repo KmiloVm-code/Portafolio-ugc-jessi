@@ -1,11 +1,10 @@
 "use client";
 
 import { Button } from "./ui/button";
-
-const whatsappLink =
-  "https://api.whatsapp.com/send?phone=573148474403&text=Hola%20Jessi,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function WhyChooseMeSection() {
+  const { openWhatsApp } = useSocialLinks();
   return (
     <section className="py-20 bg-gradient-to-br from-sage-green/5 to-honey-gold/5 bg-white">
       <div className="container mx-auto px-4">
@@ -55,7 +54,7 @@ export function WhyChooseMeSection() {
             </div>
           </div>
           <Button
-            onClick={() => window.open(whatsappLink, "_blank")}
+            onClick={() => openWhatsApp()}
             size="lg"
             className="bg-sage-green hover:bg-sage-green/90 text-white font-body mt-10"
           >

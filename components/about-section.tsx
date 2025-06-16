@@ -1,37 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Leaf, Camera, Users } from "lucide-react";
-import { WhyChooseMeSection } from "./whyChooseMe-section";
-
 export function AboutSection() {
-  const features = [
-    {
-      icon: Heart,
-      title: "Contenido Auténtico",
-      description:
-        "Creo contenido real y genuino que conecta emocionalmente con tu audiencia",
-    },
-    {
-      icon: Leaf,
-      title: "Vida Saludable",
-      description:
-        "Especializada en wellness, alimentación consciente y estilo de vida sostenible",
-    },
-    {
-      icon: Camera,
-      title: "Calidad Visual",
-      description:
-        "Producciones de alta calidad con estética natural y luminosa",
-    },
-    {
-      icon: Users,
-      title: "Conexión Real",
-      description: "Enfoque cercano que genera confianza y engagement genuino",
-    },
-  ];
-
   return (
     <section id="sobre-mi" className="py-20 bg-white">
       <div className="container mx-auto px-4">

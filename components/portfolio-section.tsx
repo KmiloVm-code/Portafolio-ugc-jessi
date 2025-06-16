@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import TikTokEmbed from "@/components/ui/TikTokEmbed";
 import { videos, categories } from "@/data";
 import { PORTFOLIO_CONFIG } from "@/config/portfolio";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 import { useVideoFilter } from "@/hooks/useVideoFilter";
 import { formatViewsCount } from "@/lib/tiktok-utils";
 
 export function PortfolioSection() {
   const { activeCategory, setActiveCategory, filteredVideos } =
     useVideoFilter(videos);
+
+  const { openSocialLink } = useSocialLinks();
 
   return (
     <section
@@ -86,9 +89,7 @@ export function PortfolioSection() {
         <div className="text-center mt-12">
           {" "}
           <Button
-            onClick={() => {
-              window.open(PORTFOLIO_CONFIG.tiktokAccount, "_blank");
-            }}
+            onClick={() => openSocialLink("tiktok")}
             size="lg"
             variant="outline"
             className="bg-sage-green hover:bg-sage-green/90 text-white group font-body"

@@ -4,12 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
-const whatsappLink =
-  "https://api.whatsapp.com/send?phone=573148474403&text=Hola%Jessi,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openWhatsApp } = useSocialLinks();
 
   const navItems = [
     { href: "#inicio", label: "Inicio" },
@@ -23,12 +22,15 @@ export function Header() {
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-sage-green/20 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link
-            href="#inicio"
+          <button
+            onClick={() => {
+              const heroSection = document.getElementById("inicio");
+              heroSection?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-2xl font-title font-bold text-sage-green"
           >
             Jessi Torres UGC
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -42,7 +44,7 @@ export function Header() {
               </Link>
             ))}
             <Button
-              onClick={() => window.open(whatsappLink, "_blank")}
+              onClick={() => openWhatsApp()}
               className="bg-sage-green hover:bg-sage-green/90 text-white font-body"
             >
               Trabajemos Juntas

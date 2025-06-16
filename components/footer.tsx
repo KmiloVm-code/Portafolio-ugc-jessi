@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { Heart } from "lucide-react";
-import { TikTok, Instagram, Facebook, Gmail } from "@/components/ui/logos";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function Footer() {
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: TikTok, href: "#", label: "TikTok" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Gmail, href: "#", label: "Gmail" },
-  ];
+  const { getSocialData } = useSocialLinks();
+  const socialData = getSocialData("tiktok", "instagram", "whatsapp", "email");
 
   return (
     <footer className="bg-deep-green text-white py-12">
@@ -20,7 +16,7 @@ export function Footer() {
             </h3>
             <p className="text-white/80 leading-relaxed font-body">
               Creando contenido auténtico que conecta marcas con audiencias
-              reales. Especializada en vida saludable y sostenible.
+              reales. Amante de la vida saludable y sostenible.
             </p>
           </div>
 
@@ -59,10 +55,11 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-title font-semibold mb-4">Sígueme</h4>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
+              {socialData.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
+                  target="_blank"
                   className="w-10 h-10 p-2 bg-honey-gold/20 rounded-full flex items-center justify-center hover:bg-honey-gold transition-colors group"
                   aria-label={social.label}
                 >

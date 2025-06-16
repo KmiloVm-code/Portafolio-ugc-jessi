@@ -1,4 +1,3 @@
 export const PORTFOLIO_CONFIG = {
-  tiktokAccount: "https://www.tiktok.com/@jesstorres_bienestar",
-  username: "jesstorres_bienestar",
+  username: "jessitorres_ugc",
 } as const;

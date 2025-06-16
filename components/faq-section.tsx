@@ -1,46 +1,12 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { MessageCircle, Mail, Calendar } from "lucide-react";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function FAQSection() {
-  const faqs = [
-    {
-      question: "¿Qué incluye el servicio de contenido UGC?",
-      answer:
-        "Incluye la creación de videos y/o imágenes auténticas de tu producto, con guión personalizado, edición profesional y entrega en múltiples formatos. También proporciono insights sobre el rendimiento del contenido.",
-    },
-    {
-      question: "¿Cuánto tiempo toma crear el contenido?",
-      answer:
-        "El tiempo varía según el proyecto, pero generalmente entrego el contenido en 48-72 horas. Para proyectos más complejos o múltiples piezas, podemos acordar un cronograma personalizado.",
-    },
-    {
-      question: "¿Trabajas con productos de cualquier nicho?",
-      answer:
-        "Me especializo en productos relacionados con bienestar, alimentación saludable, sostenibilidad y lifestyle. Si tu producto se alinea con estos valores, ¡me encantaría trabajar contigo!",
-    },
-    {
-      question: "¿Qué formatos de contenido ofreces?",
-      answer:
-        "Creo videos para TikTok, Instagram Reels, YouTube Shorts, así como imágenes para feed de Instagram, Pinterest y otros canales. Todo adaptado a las especificaciones de cada plataforma.",
-    },
-    {
-      question: "¿Cómo garantizas la autenticidad del contenido?",
-      answer:
-        "Solo trabajo con productos que genuinamente uso y recomiendo. Mi enfoque se basa en experiencias reales y honestas, lo que se traduce en contenido más creíble y efectivo.",
-    },
-    {
-      question: "¿Ofreces paquetes para múltiples contenidos?",
-      answer:
-        "Sí, ofrezco paquetes personalizados para marcas que buscan contenido regular. Esto incluye descuentos por volumen y planificación estratégica de contenido.",
-    },
-  ];
+  const { openWhatsApp } = useSocialLinks();
 
   return (
     <section
@@ -99,6 +65,8 @@ export function FAQSection() {
           <Button
             size="lg"
             className="deep-green hover:sage-green text-white font-body"
+            onClick={() => openWhatsApp()}
+            aria-label="Iniciar proyecto en WhatsApp"
           >
             Empezar mi proyecto
           </Button>
