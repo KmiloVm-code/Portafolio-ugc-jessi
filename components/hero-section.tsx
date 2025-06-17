@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useSocialLinks } from "@/hooks/useSocialLinks";
 
 export function HeroSection() {
+  const { getSocialData } = useSocialLinks();
+  const socialData = getSocialData("tiktok", "instagram", "whatsapp", "email");
   return (
     <section
       id="inicio"
@@ -50,6 +54,19 @@ export function HeroSection() {
                 Ver mi trabajo
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
+            </div>
+            <div className="flex gap-4 align-center justify-center sm:justify-start">
+              {socialData.map((social) => (
+                <Link
+                  key={social.key}
+                  href={social.href}
+                  target="_blank"
+                  className="flex items-center gap-2 text-sage-green hover:text-honey-gold transition-colors duration-300"
+                  aria-label={`Ir a ${social.label}`}
+                >
+                  <social.icon className="h-6 w-6" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
