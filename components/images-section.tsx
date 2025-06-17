@@ -25,10 +25,18 @@ export function ImagesSection() {
     },
     {
       id: 3,
-      src: "/gallery/vestido.webp",
-      alt: "Reusar también es tendencia",
+      src: "/gallery/peine-bambu.webp",
+      alt: "Peinilla de bambú ecológica",
+
       likes: "3.2K",
       comments: "124",
+    },
+    {
+      id: 4,
+      src: "/gallery/vestido.webp",
+      alt: "Reusar también es tendencia",
+      likes: "2.5K",
+      comments: "95",
     },
   ];
 

@@ -6,7 +6,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content Side */}
-          <div className="space-y-8">
+          <div className="space-y-8 text-center md:text-left">
             <div>
               <h2 className="text-3xl md:text-5xl font-title font-bold text-sage-green mb-8 text-balance">
                 ¿Por qué el contenido{" "}

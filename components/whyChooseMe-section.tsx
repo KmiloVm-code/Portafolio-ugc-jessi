@@ -23,7 +23,7 @@ export function WhyChooseMeSection() {
             planeta.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 sm:justify-items-center text-left">
+          <div className="grid md:grid-cols-3 gap-8 justify-center md:justify-items-center text-left">
             <div className="flex items-start space-x-3">
               <div className="w-6 h-6 bg-honey-gold rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-bold">✓</span>
