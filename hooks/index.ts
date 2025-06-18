@@ -23,3 +23,6 @@ export { useTikTokEmbed } from "./useTikTokEmbed";
 
 // Hook para filtrado de videos (ya existente)
 export { useVideoFilter } from "./useVideoFilter";
+
+// Hook para reproductor de video genérico
+export { useVideoPlayer } from "./useVideoPlayer";

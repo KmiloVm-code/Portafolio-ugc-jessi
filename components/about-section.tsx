@@ -1,5 +1,8 @@
 "use client";
 
+import { VideoPlayer } from "./ui/VideoPlayer";
+import { VIDEO_ABOUT_ME } from "@/config/videoAboutMe";
+
 export function AboutSection() {
   return (
     <section id="sobre-mi" className="py-20 bg-white">
@@ -31,16 +34,15 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Image Side */}
-          <div className="relative">
-            <div className="relative z-10">
-              <img
-                src="/creadoraUGC.webp"
-                alt="Creadora UGC trabajando"
-                className="w-full h-96 object-cover object-top rounded-2xl shadow-xl"
-              />
-            </div>
-            {/* Decorative Elements */}
+          <div className="relative flex justify-center">
+            {/* Video Side */}
+            <VideoPlayer
+              src={VIDEO_ABOUT_ME.src}
+              poster={VIDEO_ABOUT_ME.poster}
+              ariaLabel={VIDEO_ABOUT_ME.ariaLabel}
+            />
+
+            {/* Decorative Background Circles */}
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-honey-gold/20 rounded-full"></div>
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-sage-green/20 rounded-full"></div>
             <div className="absolute top-1/2 -left-4 w-16 h-16 bg-linen rounded-full"></div>
