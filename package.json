@@ -1,7 +1,34 @@
 {
-  "name": "my-v0-project",
+  "name": "portafolio-ugc-jessi",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": "KmiloVm-code",
+  "description": "Portafolio profesional de Jessica Torres - Creadora de Contenido UGC amante de la vida saludable y sostenible. Desarrollado por KmiloVm-code",
+  "keywords": [
+    "portfolio",
+    "ugc",
+    "content-creator",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/KmiloVm-code/portafolio-ugc-jessi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KmiloVm-code/portafolio-ugc-jessi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KmiloVm-code/portafolio-ugc-jessi/issues"
+  },
+  "contributors": [
+    {
+      "name": "Jessica Torres",
+      "role": "Client & Content Creator",
+      "url": "https://www.tiktok.com/@jessitorres_ugc"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

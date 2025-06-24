@@ -153,7 +153,7 @@ pnpm build
 
 ## 📱 Redes Sociales
 
-- **TikTok**: [@jesstorres_bienestar](https://www.tiktok.com/@jesstorres_bienestar)
+- **TikTok**: [@jesstorres_bienestar](https://www.tiktok.com/@jessitorres_ugc)
 - **Instagram**: [Perfil de Instagram](https://www.instagram.com/jessitorres.ugc/)
 
 ## 🤝 Contribución
@@ -162,7 +162,7 @@ Este es un proyecto personal, pero si encuentras algún bug o tienes sugerencias
 
 ## 📄 Licencia
 
-Este proyecto es de uso personal y profesional de Jessica Torres.
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
