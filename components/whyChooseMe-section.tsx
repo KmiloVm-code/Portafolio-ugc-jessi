@@ -12,10 +12,10 @@ export function WhyChooseMeSection() {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-title font-bold text-sage-green mb-6">
+          <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
             ¿Por qué{" "}
             <span className="font-script text-honey-gold">elegirme</span> a mí?
-          </h3>
+          </h2>
           <p className="text-lg text-deep-green/80 leading-relaxed font-body mb-10 text-balance">
             Mi diferencial está en mostrar que llevar un estilo de vida
             saludable no tiene que ser complicado ni restrictivo. A través de

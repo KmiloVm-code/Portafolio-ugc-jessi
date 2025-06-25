@@ -15,9 +15,9 @@ export function FAQSection() {
     >
       <div className="container mx-auto text-center px-4">
         <div>
-          <h3 className="text-3xl font-title font-bold text-dark-green mb-4">
+          <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
             ¿Lista para crear contenido increíble juntas?
-          </h3>
+          </h2>
           <p className="text-lg text-dark-green/80 mb-8 max-w-2xl mx-auto font-body">
             Cuéntame sobre tu marca y tu visión. Trabajemos juntas para crear
             contenido auténtico que conecte con tu audiencia y genere resultados
