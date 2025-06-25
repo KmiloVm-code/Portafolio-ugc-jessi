@@ -61,9 +61,9 @@ const config = {
         "deep-green": "#4A5D3A", // Acentos
       },
       fontFamily: {
-        title: ["Playfair Display", "Georgia", "serif"], // TAN Tangkiwood fallback
-        body: ["Inter", "Arial", "sans-serif"],
-        script: ["Dancing Script", "Brush Script MT", "cursive"],
+        title: ["var(--font-tantangkiwood)"],
+        body: ["var(--font-garet-book)"],
+        script: ["var(--font-gwendolyn)"],
       },
       borderRadius: {
         lg: "var(--radius)",

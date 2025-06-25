@@ -2,23 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TAN Tangkiwood inspired typography */
-.font-title {
-  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.font-body {
-  font-family: "Inter", "Arial", "Helvetica", sans-serif;
-}
-
-.font-script {
-  font-family: "Dancing Script", "Brush Script MT", cursive;
-}
-
 body {
-  font-family: "Inter", "Arial", "Helvetica", sans-serif;
   background-color: #f4f1e8;
 }
 
