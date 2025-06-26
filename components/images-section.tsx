@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
+import Image from "next/image";
 
 export function ImagesSection() {
   const { openSocialLink } = useSocialLinks();
@@ -57,20 +58,21 @@ export function ImagesSection() {
           {images.map((image) => (
             <Card
               key={image.id}
-              className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+              className="relative group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
             >
-              <figure className="relative overflow-hidden w-auto aspect-[4/5]">
-                <img
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-[4/5]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm font-medium mb-3">
-                      {image.alt}
-                    </p>
-                    {/* <div className="flex items-center justify-between">
+              <Image
+                src={image.src || "/placeholder.svg"}
+                alt={image.alt}
+                width={440}
+                height={550}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-[4/5]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-white text-sm font-medium mb-3">
+                    {image.alt}
+                  </p>
+                  {/* <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-white">
                         <div className="flex items-center space-x-1">
                           <Heart className="h-4 w-4" />
@@ -89,9 +91,8 @@ export function ImagesSection() {
                         <Share2 className="h-4 w-4" />
                       </Button>
                     </div> */}
-                  </div>
                 </div>
-              </figure>
+              </div>
             </Card>
           ))}
         </div>
