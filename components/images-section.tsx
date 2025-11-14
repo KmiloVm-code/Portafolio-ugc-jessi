@@ -12,20 +12,27 @@ export function ImagesSection() {
   const images = [
     {
       id: 1,
+      src: "/gallery/colageno.webp",
+      alt: "Cuidado de la piel desde adentro",
+      likes: "3.5K",
+      comments: "150",
+    },
+    {
+      id: 2,
       src: "/gallery/labial.webp",
       alt: "Cuidado labial con intención",
       likes: "2.1K",
       comments: "89",
     },
     {
-      id: 2,
+      id: 3,
       src: "/gallery/disco.webp",
       alt: "Innovación íntima sin tabús",
       likes: "1.8K",
       comments: "67",
     },
     {
-      id: 3,
+      id: 4,
       src: "/gallery/peine-bambu.webp",
       alt: "Peinilla de bambú ecológica",
 
@@ -33,7 +40,7 @@ export function ImagesSection() {
       comments: "124",
     },
     {
-      id: 4,
+      id: 5,
       src: "/gallery/vestido.webp",
       alt: "Reusar también es tendencia",
       likes: "2.5K",
