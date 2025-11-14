@@ -7,7 +7,7 @@ export const socialLinks = {
       return `https://api.whatsapp.com/send?phone=${socialLinks.whatsapp.phone}&text=${encodedMessage}`;
     },
   },
-  instagram: "https://www.instagram.com/jessitorres.ugc/",
+  instagram: "https://www.instagram.com/jessitorres_p/",
   tiktok: "https://www.tiktok.com/@jessitorres_ugc",
   email: "mailto:jesstorres96@hotmail.com"
 } as const;
