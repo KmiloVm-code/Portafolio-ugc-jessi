@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_component_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "icon": "twitter"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string",
+      "default": "#",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isExternal": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
