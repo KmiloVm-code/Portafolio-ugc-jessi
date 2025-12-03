@@ -44,7 +44,7 @@ export default async function Home() {
         <PortfolioSection portfolioSection={portfolioSection} />
         <WhyChooseMeSection whyChooseMeSection={whyChooseMeSection} />
         <ImagesSection imagesSection={imagesSection} />
-        <FAQSection />
+        <FAQSection faqSection={faqSection} />
       </main>
       <Footer />
     </div>

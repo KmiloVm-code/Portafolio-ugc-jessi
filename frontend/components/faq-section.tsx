@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Mail, Calendar } from "lucide-react";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
+import { FAQSectionType } from "@/types/faq-section";
 
-export function FAQSection() {
+export function FAQSection({ faqSection }: { faqSection: FAQSectionType }) {
   const { openWhatsApp } = useSocialLinks();
 
   return (
@@ -16,12 +17,10 @@ export function FAQSection() {
       <div className="container mx-auto text-center px-4">
         <div>
           <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
-            ¿Lista para crear contenido increíble juntas?
+            {faqSection.title}
           </h2>
           <p className="text-lg text-dark-green/80 mb-8 max-w-2xl mx-auto font-body">
-            Cuéntame sobre tu marca y tu visión. Trabajemos juntas para crear
-            contenido auténtico que conecte con tu audiencia y genere resultados
-            reales.
+            {faqSection.description}
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
