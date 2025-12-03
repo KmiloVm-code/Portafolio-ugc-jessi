@@ -24,7 +24,11 @@ const Query_HOME_PAGE = {
           populate: "*",
         },
         "layout.images-section": {
-          populate: "*",
+          populate: {
+            images: {
+              populate: "*",
+            },
+          },
         },
         "layout.faq-section": {
           populate: "*",

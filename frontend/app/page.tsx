@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { WhyChooseMeSection } from "@/components/whyChooseMe-section";
 import { tantangkiwood, gwendolyn, garetBook } from "../components/ui/fonts";
 import { getHomePage } from "@/lib/cms-server";
+import { ImageItem } from "@/types/images-section";
 
 export default async function Home() {
   const homePage = await getHomePage();
@@ -22,10 +23,15 @@ export default async function Home() {
   ] = homePage.sections;
 
   heroSection.portada.url = process.env.NEXT_API_URL + heroSection.portada.url;
+
   aboutSection.video_about.video.url =
     process.env.NEXT_API_URL + aboutSection.video_about.video.url;
   aboutSection.video_about.poster.url =
     process.env.NEXT_API_URL + aboutSection.video_about.poster.url;
+
+  imagesSection.images.forEach((items: ImageItem) => {
+    items.image.url = process.env.NEXT_API_URL + items.image.url;
+  });
 
   return (
     <div
@@ -37,7 +43,7 @@ export default async function Home() {
         <AboutSection aboutSection={aboutSection} />
         <PortfolioSection portfolioSection={portfolioSection} />
         <WhyChooseMeSection whyChooseMeSection={whyChooseMeSection} />
-        <ImagesSection />
+        <ImagesSection imagesSection={imagesSection} />
         <FAQSection />
       </main>
       <Footer />
