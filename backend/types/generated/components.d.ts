@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentImageGallery extends Struct.ComponentSchema {
+  collectionName: 'components_component_image_galleries';
+  info: {
+    displayName: 'Image Gallery';
+    icon: 'picture';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface ComponentSocialLinks extends Struct.ComponentSchema {
   collectionName: 'components_component_social_links';
   info: {
@@ -79,6 +90,20 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutImagesSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_images_sections';
+  info: {
+    displayName: 'Images Section';
+    icon: 'picture';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Component<'component.image-gallery', true>;
+    instagram_url: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutPortfolioSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_portfolio_sections';
   info: {
@@ -110,12 +135,14 @@ export interface LayoutWhyChooseMeSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'component.image-gallery': ComponentImageGallery;
       'component.social-links': ComponentSocialLinks;
       'component.text-list': ComponentTextList;
       'component.video-tik-tok': ComponentVideoTikTok;
       'component.whatsapp': ComponentWhatsapp;
       'layout.about-section': LayoutAboutSection;
       'layout.hero-section': LayoutHeroSection;
+      'layout.images-section': LayoutImagesSection;
       'layout.portfolio-section': LayoutPortfolioSection;
       'layout.why-choose-me-section': LayoutWhyChooseMeSection;
     }

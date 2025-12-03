@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_image_galleries",
+  "info": {
+    "displayName": "Image Gallery",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

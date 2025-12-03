@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_images_sections",
+  "info": {
+    "displayName": "Images Section",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "component",
+      "component": "component.image-gallery",
+      "repeatable": true
+    },
+    "instagram_url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
