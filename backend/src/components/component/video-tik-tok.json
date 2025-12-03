@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_video_tik_toks",
+  "info": {
+    "displayName": "Video TikTok",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "video_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "views": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_portfolio_sections",
+  "info": {
+    "displayName": "Portfolio Section",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tiktok_videos": {
+      "type": "component",
+      "component": "component.video-tik-tok",
+      "repeatable": true
+    },
+    "tiktok_url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
