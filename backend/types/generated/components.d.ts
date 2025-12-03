@@ -23,7 +23,7 @@ export interface ComponentTextList extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    text: Schema.Attribute.Text;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -38,6 +38,18 @@ export interface ComponentVideoTikTok extends Struct.ComponentSchema {
     title: Schema.Attribute.String;
     video_id: Schema.Attribute.String;
     views: Schema.Attribute.Integer;
+  };
+}
+
+export interface ComponentWhatsapp extends Struct.ComponentSchema {
+  collectionName: 'components_component_whatsapps';
+  info: {
+    displayName: 'Whatsapp';
+    icon: 'user';
+  };
+  attributes: {
+    message: Schema.Attribute.Text;
+    phone: Schema.Attribute.BigInteger;
   };
 }
 
@@ -81,15 +93,31 @@ export interface LayoutPortfolioSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutWhyChooseMeSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_why_choose_me_sections';
+  info: {
+    displayName: 'whyChooseMe Section';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'component.text-list', true>;
+    title: Schema.Attribute.String;
+    whatsapp: Schema.Attribute.Component<'component.whatsapp', false>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'component.social-links': ComponentSocialLinks;
       'component.text-list': ComponentTextList;
       'component.video-tik-tok': ComponentVideoTikTok;
+      'component.whatsapp': ComponentWhatsapp;
       'layout.about-section': LayoutAboutSection;
       'layout.hero-section': LayoutHeroSection;
       'layout.portfolio-section': LayoutPortfolioSection;
+      'layout.why-choose-me-section': LayoutWhyChooseMeSection;
     }
   }
 }

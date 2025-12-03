@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_whatsapps",
+  "info": {
+    "displayName": "Whatsapp",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "biginteger"
+    },
+    "message": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

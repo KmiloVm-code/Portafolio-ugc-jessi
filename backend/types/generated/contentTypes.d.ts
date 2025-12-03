@@ -456,6 +456,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'layout.hero-section',
         'layout.about-section',
         'layout.portfolio-section',
+        'layout.why-choose-me-section',
       ]
     >;
     updatedAt: Schema.Attribute.DateTime;
