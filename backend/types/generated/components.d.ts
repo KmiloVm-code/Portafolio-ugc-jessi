@@ -21,7 +21,6 @@ export interface ComponentSocialLinks extends Struct.ComponentSchema {
     href: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#'>;
-    icon: Schema.Attribute.Media<'images'>;
     isExternal: Schema.Attribute.Boolean;
     label: Schema.Attribute.String;
   };

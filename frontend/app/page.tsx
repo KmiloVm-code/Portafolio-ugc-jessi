@@ -7,15 +7,29 @@ import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { WhyChooseMeSection } from "@/components/whyChooseMe-section";
 import { tantangkiwood, gwendolyn, garetBook } from "../components/ui/fonts";
+import { getHomePage } from "@/lib/cms-server";
 
-export default function Home() {
+export default async function Home() {
+  const homePage = await getHomePage();
+
+  const [
+    heroSection,
+    aboutSection,
+    portfolioSection,
+    whyChooseMeSection,
+    imagesSection,
+    faqSection,
+  ] = homePage.sections;
+
+  heroSection.portada.url = process.env.NEXT_API_URL + heroSection.portada.url;
+
   return (
     <div
       className={`min-h-screen bg-linen ${tantangkiwood.variable} ${gwendolyn.variable} ${garetBook.variable} antialiased`}
     >
       <Header />
       <main>
-        <HeroSection />
+        <HeroSection heroSection={heroSection} />
         <AboutSection />
         <PortfolioSection />
         <WhyChooseMeSection />

@@ -5,10 +5,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
+import { Hero } from "@/types/hero";
+import { socialLinks } from "@/lib/social-links";
 
-export function HeroSection() {
-  const { getSocialData } = useSocialLinks();
-  const socialData = getSocialData("tiktok", "instagram", "whatsapp", "email");
+export function HeroSection({ heroSection }: { heroSection: Hero }) {
+  const { getSocialIcon } = useSocialLinks();
+  const socialData = heroSection.social;
+
   return (
     <section
       id="inicio"
@@ -19,7 +22,7 @@ export function HeroSection() {
           {/* Imagen first on mobile, second on desktop */}{" "}
           <div className="relative order-1 lg:order-2">
             <Image
-              src="/portada.webp"
+              src={heroSection.portada.url}
               alt="Creadora de contenido UGC"
               width={800}
               height={800}
@@ -30,14 +33,18 @@ export function HeroSection() {
           <div className="space-y-8 animate-fade-in order-2 lg:order-1">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-title font-bold text-sage-green leading-tight text-balance">
-                Creando contenido{" "}
-                <span className="text-honey-gold font-script">auténtico</span>{" "}
-                que <span className="text-honey-gold font-script">conecta</span>
+                {heroSection.title.split("*").map((part, index) =>
+                  index % 2 === 1 ? (
+                    <span key={index} className="text-honey-gold font-script">
+                      {part}
+                    </span>
+                  ) : (
+                    part
+                  )
+                )}
               </h1>
               <p className="text-xl text-deep-green/80 leading-relaxed font-body text-pretty">
-                Soy Jessi Torres creadora <strong>UGC</strong> de bienestar,
-                sostenibilidad y belleza real. Colaboro con marcas conscientes
-                para inspirar decisiones más saludables y auténticas.
+                {heroSection.description}
               </p>
             </div>
 
@@ -56,17 +63,24 @@ export function HeroSection() {
               </Button>
             </div>
             <div className="flex gap-4 align-center justify-center sm:justify-start">
-              {socialData.map((social) => (
-                <Link
-                  key={social.key}
-                  href={social.href}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sage-green hover:text-honey-gold transition-colors duration-300"
-                  aria-label={`Ir a ${social.label}`}
-                >
-                  <social.icon className="h-6 w-6" />
-                </Link>
-              ))}
+              {socialData.map((social) => {
+                const platform =
+                  social.label.toLowerCase() as keyof typeof socialLinks;
+                const Icon = getSocialIcon(platform);
+
+                return (
+                  <Link
+                    key={social.id}
+                    href={social.href}
+                    target="_blank"
+                    className="flex items-center gap-2 text-sage-green hover:text-honey-gold transition-colors duration-300"
+                    aria-label={social.label}
+                  >
+                    {Icon && <Icon className="w-6 h-6" />}
+                    <span className="sr-only">{social.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

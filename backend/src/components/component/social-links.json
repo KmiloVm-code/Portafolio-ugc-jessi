@@ -14,13 +14,6 @@
       "default": "#",
       "required": true
     },
-    "icon": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "isExternal": {
       "type": "boolean"
     }
