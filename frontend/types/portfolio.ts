@@ -1,11 +1,16 @@
 export interface Video {
-  id: string;
+  id: number;
+  video_id: string;
   title: string;
   category: string;
-  vistas: number;
+  views: number;
 }
 
-export interface Category {
-  id: string;
-  label: string;
+export interface Portfolio {
+  __component: "layout.portfolio-section";
+  id: number;
+  title: string;
+  description: string;
+  tiktok_url: string;
+  tiktok_videos: Video[];
 }

@@ -35,7 +35,7 @@ export default async function Home() {
       <main>
         <HeroSection heroSection={heroSection} />
         <AboutSection aboutSection={aboutSection} />
-        <PortfolioSection />
+        <PortfolioSection portfolioSection={portfolioSection} />
         <WhyChooseMeSection />
         <ImagesSection />
         <FAQSection />

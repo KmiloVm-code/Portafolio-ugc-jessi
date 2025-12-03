@@ -2,17 +2,33 @@
 
 import { Button } from "@/components/ui/button";
 import TikTokEmbed from "@/components/ui/TikTokEmbed";
-import { videos, categories } from "@/data";
+// import { videos, categories } from "@/data";
 import { PORTFOLIO_CONFIG } from "@/config/portfolio";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
 import { useVideoFilter } from "@/hooks/useVideoFilter";
 import { formatViewsCount } from "@/lib/tiktok-utils";
+import { Portfolio } from "@/types/portfolio";
 
-export function PortfolioSection() {
-  const { activeCategory, setActiveCategory, filteredVideos } =
-    useVideoFilter(videos);
+export function PortfolioSection({
+  portfolioSection,
+}: {
+  portfolioSection: Portfolio;
+}) {
+  const { activeCategory, setActiveCategory, filteredVideos } = useVideoFilter(
+    portfolioSection.tiktok_videos
+  );
 
   const { openSocialLink } = useSocialLinks();
+
+  const getCategories = () => {
+    const categories = portfolioSection.tiktok_videos.map((video) => {
+      return video.category.charAt(0).toUpperCase() + video.category.slice(1);
+    });
+    categories.unshift("Todos");
+    return categories.filter(
+      (category, index) => categories.indexOf(category) === index
+    );
+  };
 
   return (
     <section
@@ -22,29 +38,31 @@ export function PortfolioSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-title font-bold text-dark-green mb-6">
-            Mi <span className="text-warm-orange">Portafolio</span> de Videos
+            {portfolioSection.title}
           </h2>
           <p className="text-lg text-dark-green/80 max-w-2xl mx-auto font-body text-balance">
-            Cada video está hecho con intención: mostrar, inspirar y generar
-            confianza. Aquí puedes explorar mi trabajo según el tipo de marca o
-            enfoque.
+            {portfolioSection.description}
           </p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
+          {getCategories().map((category, index) => (
             <Button
-              key={category.id}
-              variant={activeCategory === category.id ? "default" : "outline"}
-              onClick={() => setActiveCategory(category.id)}
+              key={index}
+              variant={
+                activeCategory === category.toLowerCase()
+                  ? "default"
+                  : "outline"
+              }
+              onClick={() => setActiveCategory(category.toLowerCase())}
               className={
-                activeCategory === category.id
+                activeCategory === category.toLowerCase()
                   ? "deep-green hover:deepgreen/90 text-white font-body"
                   : "border-deep-green text-deep-green hover:bg-deep-green/10 font-body"
               }
             >
-              {category.label}
+              {category}
             </Button>
           ))}
         </div>
@@ -62,7 +80,7 @@ export function PortfolioSection() {
                   {video && (
                     <TikTokEmbed
                       key={video.id}
-                      videoId={video.id.toString()}
+                      videoId={video.video_id}
                       username={PORTFOLIO_CONFIG.username}
                     />
                   )}
@@ -87,7 +105,6 @@ export function PortfolioSection() {
         </div>
 
         <div className="text-center mt-12">
-          {" "}
           <Button
             onClick={() => openSocialLink("tiktok")}
             size="lg"

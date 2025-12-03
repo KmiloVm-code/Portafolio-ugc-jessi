@@ -1,4 +1,4 @@
-export type { Video, Category } from "./portfolio";
+export type { Video } from "./portfolio";
 export type {
   TikTokPlayerConfig,
   IntersectionObserverConfig,
