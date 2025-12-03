@@ -22,6 +22,10 @@ export default async function Home() {
   ] = homePage.sections;
 
   heroSection.portada.url = process.env.NEXT_API_URL + heroSection.portada.url;
+  aboutSection.video_about.video.url =
+    process.env.NEXT_API_URL + aboutSection.video_about.video.url;
+  aboutSection.video_about.poster.url =
+    process.env.NEXT_API_URL + aboutSection.video_about.poster.url;
 
   return (
     <div
@@ -30,7 +34,7 @@ export default async function Home() {
       <Header />
       <main>
         <HeroSection heroSection={heroSection} />
-        <AboutSection />
+        <AboutSection aboutSection={aboutSection} />
         <PortfolioSection />
         <WhyChooseMeSection />
         <ImagesSection />

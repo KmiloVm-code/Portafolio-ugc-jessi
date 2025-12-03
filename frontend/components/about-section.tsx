@@ -1,9 +1,10 @@
 "use client";
 
 import { VideoPlayer } from "./ui/VideoPlayer";
-import { VIDEO_ABOUT_ME } from "@/config/videoAboutMe";
+import { About } from "@/types/about";
 
-export function AboutSection() {
+export function AboutSection({ aboutSection }: { aboutSection: About }) {
+  const { video_about, title, items } = aboutSection;
   return (
     <section id="sobre-mi" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -12,24 +13,34 @@ export function AboutSection() {
           <div className="space-y-8 text-center md:text-left">
             <div>
               <h2 className="text-3xl md:text-5xl font-title font-bold text-sage-green mb-8 text-balance">
-                ¿Por qué el contenido{" "}
-                <span className="text-honey-gold font-script">UGC</span>{" "}
-                funciona?
+                {title.split("*").map((part, index) =>
+                  index % 2 === 1 ? (
+                    <span key={index} className="text-honey-gold font-script">
+                      {part}
+                    </span>
+                  ) : (
+                    part
+                  )
+                )}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <p className="text-lg text-deep-green/80 leading-relaxed font-body text-balance">
-                  🌱 <strong className="text-honey-gold">79%</strong> cree que
-                  el UGC hace a las marcas más auténticas
-                </p>
-                <p className="text-lg text-deep-green/80 leading-relaxed font-body text-balance">
-                  ❤️ <strong className="text-honey-gold">8 de cada 10</strong>{" "}
-                  confían más en recomendaciones auténticas
-                </p>
-                <p className="text-lg text-deep-green/80 leading-relaxed font-body text-balance">
-                  🚀 UGC aumenta el engagement hasta en un{" "}
-                  <strong className="text-honey-gold">28%</strong>
-                </p>
+                {items.map((item, index) => (
+                  <p
+                    key={index}
+                    className="text-lg text-deep-green/80 leading-relaxed font-body text-balance"
+                  >
+                    {item.text.split("*").map((part, index) =>
+                      index % 2 === 1 ? (
+                        <span key={index} className="text-honey-gold">
+                          {part}
+                        </span>
+                      ) : (
+                        part
+                      )
+                    )}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
@@ -37,9 +48,9 @@ export function AboutSection() {
           <div className="relative flex justify-center">
             {/* Video Side */}
             <VideoPlayer
-              src={VIDEO_ABOUT_ME.src}
-              poster={VIDEO_ABOUT_ME.poster}
-              ariaLabel={VIDEO_ABOUT_ME.ariaLabel}
+              src={video_about.video.url}
+              poster={video_about.poster.url}
+              ariaLabel={video_about.video.alternativeText}
             />
 
             {/* Decorative Background Circles */}

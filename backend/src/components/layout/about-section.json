@@ -13,12 +13,10 @@
       "component": "component.text-list",
       "repeatable": true
     },
-    "video": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "videos"
-      ]
+    "video_about": {
+      "type": "component",
+      "component": "component.video-about",
+      "repeatable": false
     }
   },
   "config": {}

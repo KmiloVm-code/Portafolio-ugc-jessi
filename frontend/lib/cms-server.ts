@@ -10,7 +10,12 @@ const Query_HOME_PAGE = {
           populate: "*",
         },
         "layout.about-section": {
-          populate: "*",
+          populate: {
+            video_about: {
+              populate: "*",
+            },
+            items: "*",
+          },
         },
         "layout.portfolio-section": {
           populate: "*",

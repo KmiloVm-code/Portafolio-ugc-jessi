@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_component_video_abouts",
+  "info": {
+    "displayName": "Video About",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

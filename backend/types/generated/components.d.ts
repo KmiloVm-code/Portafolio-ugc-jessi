@@ -37,6 +37,18 @@ export interface ComponentTextList extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentVideoAbout extends Struct.ComponentSchema {
+  collectionName: 'components_component_video_abouts';
+  info: {
+    displayName: 'Video About';
+    icon: 'play';
+  };
+  attributes: {
+    poster: Schema.Attribute.Media<'images'>;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
 export interface ComponentVideoTikTok extends Struct.ComponentSchema {
   collectionName: 'components_component_video_tik_toks';
   info: {
@@ -71,7 +83,7 @@ export interface LayoutAboutSection extends Struct.ComponentSchema {
   attributes: {
     items: Schema.Attribute.Component<'component.text-list', true>;
     title: Schema.Attribute.String;
-    video: Schema.Attribute.Media<'videos'>;
+    video_about: Schema.Attribute.Component<'component.video-about', false>;
   };
 }
 
@@ -150,6 +162,7 @@ declare module '@strapi/strapi' {
       'component.image-gallery': ComponentImageGallery;
       'component.social-links': ComponentSocialLinks;
       'component.text-list': ComponentTextList;
+      'component.video-about': ComponentVideoAbout;
       'component.video-tik-tok': ComponentVideoTikTok;
       'component.whatsapp': ComponentWhatsapp;
       'layout.about-section': LayoutAboutSection;
