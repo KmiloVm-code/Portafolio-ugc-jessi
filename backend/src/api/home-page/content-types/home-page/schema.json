@@ -18,7 +18,8 @@
         "layout.about-section",
         "layout.portfolio-section",
         "layout.why-choose-me-section",
-        "layout.images-section"
+        "layout.images-section",
+        "layout.faq-section"
       ]
     }
   }

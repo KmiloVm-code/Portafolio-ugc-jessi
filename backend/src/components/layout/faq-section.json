@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_faq_sections",
+  "info": {
+    "displayName": "Faq Section",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "component",
+      "component": "component.whatsapp",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

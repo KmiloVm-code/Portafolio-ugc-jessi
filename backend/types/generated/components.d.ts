@@ -76,6 +76,19 @@ export interface LayoutAboutSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_faq_sections';
+  info: {
+    displayName: 'Faq Section';
+    icon: 'lightbulb';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    whatsapp: Schema.Attribute.Component<'component.whatsapp', false>;
+  };
+}
+
 export interface LayoutHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_hero_sections';
   info: {
@@ -141,6 +154,7 @@ declare module '@strapi/strapi' {
       'component.video-tik-tok': ComponentVideoTikTok;
       'component.whatsapp': ComponentWhatsapp;
       'layout.about-section': LayoutAboutSection;
+      'layout.faq-section': LayoutFaqSection;
       'layout.hero-section': LayoutHeroSection;
       'layout.images-section': LayoutImagesSection;
       'layout.portfolio-section': LayoutPortfolioSection;
