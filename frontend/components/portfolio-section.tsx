@@ -2,8 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import TikTokEmbed from "@/components/ui/TikTokEmbed";
-// import { videos, categories } from "@/data";
-import { PORTFOLIO_CONFIG } from "@/config/portfolio";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
 import { useVideoFilter } from "@/hooks/useVideoFilter";
 import { formatViewsCount } from "@/lib/tiktok-utils";
@@ -29,6 +27,8 @@ export function PortfolioSection({
       (category, index) => categories.indexOf(category) === index
     );
   };
+
+  const tiktokUsername = portfolioSection.tiktok_url.split("/").pop();
 
   return (
     <section
@@ -81,7 +81,7 @@ export function PortfolioSection({
                     <TikTokEmbed
                       key={video.id}
                       videoId={video.video_id}
-                      username={PORTFOLIO_CONFIG.username}
+                      username={tiktokUsername || ""}
                     />
                   )}
 

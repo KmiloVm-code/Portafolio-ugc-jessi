@@ -1,17 +1,13 @@
 import { useMemo } from "react";
-import type { 
-  TikTokPlayerConfig, 
-  UseTikTokPlayerResult,
-  DEFAULT_TIKTOK_PLAYER_CONFIG 
-} from "@/types";
+import type { TikTokPlayerConfig, UseTikTokPlayerResult } from "@/types";
 
 /**
  * Hook personalizado para generar URL y propiedades del reproductor de TikTok
- * 
+ *
  * @param videoId - ID único del video de TikTok
  * @param config - Configuración personalizada del reproductor (opcional)
  * @returns Objeto con URL del reproductor y propiedades del iframe
- * 
+ *
  * @example
  * ```tsx
  * const { playerUrl, iframeProps } = useTikTokPlayer("video123", {
@@ -43,16 +39,21 @@ export const useTikTokPlayer = (
     return `https://www.tiktok.com/player/v1/${videoId}?${params.toString()}`;
   }, [videoId, config]);
 
-  const iframeProps = useMemo(() => ({
-    title: `TikTok video ${videoId}`,
-    loading: "lazy" as const,
-    sandbox: "allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox",
-    allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-    referrerPolicy: "strict-origin-when-cross-origin" as const,
-    allowFullScreen: true,
-    className: "tiktok-embed",
-    "data-video-id": videoId,
-  }), [videoId]);
+  const iframeProps = useMemo(
+    () => ({
+      title: `TikTok video ${videoId}`,
+      loading: "lazy" as const,
+      sandbox:
+        "allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox",
+      allow:
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+      referrerPolicy: "strict-origin-when-cross-origin" as const,
+      allowFullScreen: true,
+      className: "tiktok-embed",
+      "data-video-id": videoId,
+    }),
+    [videoId]
+  );
 
   return {
     playerUrl,
