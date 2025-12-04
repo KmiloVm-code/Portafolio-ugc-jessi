@@ -9,9 +9,15 @@ import { WhyChooseMeSection } from "@/components/whyChooseMe-section";
 import { tantangkiwood, gwendolyn, garetBook } from "../components/ui/fonts";
 import { getHomePage } from "@/lib/cms-server";
 import { ImageItem } from "@/types/images-section";
+import { ErrorPage } from "@/components/error-page";
 
 export default async function Home() {
   const homePage = await getHomePage();
+
+  // if homePage data is missing, render the ErrorPage component
+  if (!homePage || !homePage.sections) {
+    return <ErrorPage />;
+  }
 
   const [
     heroSection,
