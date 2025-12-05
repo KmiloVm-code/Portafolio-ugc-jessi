@@ -1,46 +1,12 @@
 import qs from "qs";
+import { QUERY_HOME_PAGE } from "./queries";
 
 const BASE_URL = process.env.NEXT_API_URL;
 
-const Query_HOME_PAGE = {
-  populate: {
-    sections: {
-      on: {
-        "layout.hero-section": {
-          populate: "*",
-        },
-        "layout.about-section": {
-          populate: {
-            video_about: {
-              populate: "*",
-            },
-            items: "*",
-          },
-        },
-        "layout.portfolio-section": {
-          populate: "*",
-        },
-        "layout.why-choose-me-section": {
-          populate: "*",
-        },
-        "layout.images-section": {
-          populate: {
-            images: {
-              populate: "*",
-            },
-          },
-        },
-        "layout.faq-section": {
-          populate: "*",
-        },
-      },
-    },
-  },
-};
-
 export async function getHomePage() {
-  const query = qs.stringify(Query_HOME_PAGE);
+  const query = qs.stringify(QUERY_HOME_PAGE);
   const response = await getCMSData(`/api/home-page?${query}`);
+  console.log("Home Page Data:", response.data);
   return response?.data;
 }
 
