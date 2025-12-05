@@ -15,29 +15,11 @@ export default async function Home() {
   const homePage = await getHomePage();
 
   // if homePage data is missing, render the ErrorPage component
-  if (!homePage || !homePage.sections) {
+  if (!homePage) {
     return <ErrorPage />;
   }
 
-  const [
-    heroSection,
-    aboutSection,
-    portfolioSection,
-    whyChooseMeSection,
-    imagesSection,
-    faqSection,
-  ] = homePage.sections;
-
-  heroSection.portada.url = process.env.NEXT_API_URL + heroSection.portada.url;
-
-  aboutSection.video_about.video.url =
-    process.env.NEXT_API_URL + aboutSection.video_about.video.url;
-  aboutSection.video_about.poster.url =
-    process.env.NEXT_API_URL + aboutSection.video_about.poster.url;
-
-  imagesSection.images.forEach((items: ImageItem) => {
-    items.image.url = process.env.NEXT_API_URL + items.image.url;
-  });
+  const { hero, about, portfolio, whyChooseMe, images, faq } = homePage;
 
   return (
     <div
@@ -45,12 +27,12 @@ export default async function Home() {
     >
       <Header />
       <main>
-        <HeroSection heroSection={heroSection} />
-        <AboutSection aboutSection={aboutSection} />
-        <PortfolioSection portfolioSection={portfolioSection} />
-        <WhyChooseMeSection whyChooseMeSection={whyChooseMeSection} />
-        <ImagesSection imagesSection={imagesSection} />
-        <FAQSection faqSection={faqSection} />
+        <HeroSection heroSection={hero} />
+        <AboutSection aboutSection={about} />
+        <PortfolioSection portfolioSection={portfolio} />
+        <WhyChooseMeSection whyChooseMeSection={whyChooseMe} />
+        <ImagesSection imagesSection={images} />
+        <FAQSection faqSection={faq} />
       </main>
       <Footer />
     </div>
