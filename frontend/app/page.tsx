@@ -8,7 +8,6 @@ import { Footer } from "@/components/footer";
 import { WhyChooseMeSection } from "@/components/whyChooseMe-section";
 import { tantangkiwood, gwendolyn, garetBook } from "../components/ui/fonts";
 import { getHomePage } from "@/lib/cms-server";
-import { ImageItem } from "@/types/images-section";
 import { ErrorPage } from "@/components/error-page";
 
 export default async function Home() {

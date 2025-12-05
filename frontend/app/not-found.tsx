@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 import { tantangkiwood, gwendolyn, garetBook } from "@/components/ui/fonts";
-import Link from "next/link";
 
 export default function NotFound() {
   const handleGoHome = () => {
