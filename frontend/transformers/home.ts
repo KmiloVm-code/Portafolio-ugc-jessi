@@ -5,18 +5,22 @@ import { Portfolio } from "@/types/portfolio";
 import { WhyChooseMe } from "@/types/whyChooseMe";
 import { ImagesSection } from "@/types/images-section";
 import { FAQSectionType } from "@/types/faq-section";
+import { Home, HomeSection } from "@/types/home";
 
-export interface HomePageData {
-  hero: Hero;
-  about: About;
-  portfolio: Portfolio;
-  whyChooseMe: WhyChooseMe;
-  images: ImagesSection;
-  faq: FAQSectionType;
-}
+export function transformHomePageData(data: HomeSection[]): Home | null {
+  const hero = findSection<Hero>(data, "layout.hero-section");
+  const about = findSection<About>(data, "layout.about-section");
+  const portfolio = findSection<Portfolio>(data, "layout.portfolio-section");
+  const whyChooseMe = findSection<WhyChooseMe>(
+    data,
+    "layout.why-choose-me-section"
+  );
+  const images = findSection<ImagesSection>(data, "layout.images-section");
+  const faq = findSection<FAQSectionType>(data, "layout.faq-section");
 
-export function transformHomePageData(sections: any[]): HomePageData {
-  const [hero, about, portfolio, whyChooseMe, images, faq] = sections;
+  if (!hero || !about || !portfolio || !whyChooseMe || !images || !faq) {
+    return null;
+  }
 
   return {
     hero: transformHero(hero),
@@ -26,6 +30,15 @@ export function transformHomePageData(sections: any[]): HomePageData {
     images: transformImages(images),
     faq,
   };
+}
+
+function findSection<T extends { __component: string }>(
+  data: HomeSection[],
+  component: string
+): T | undefined {
+  return data.find((section) => section.__component === component) as
+    | T
+    | undefined;
 }
 
 function transformHero(data: Hero): Hero {

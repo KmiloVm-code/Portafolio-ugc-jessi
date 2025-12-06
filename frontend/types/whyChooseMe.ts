@@ -1,5 +1,6 @@
 export interface WhyChooseMe {
-  id: string;
+  __component: "layout.why-choose-me-section";
+  id: number;
   title: string;
   description: string;
   items: WhyChooseMeItem[];

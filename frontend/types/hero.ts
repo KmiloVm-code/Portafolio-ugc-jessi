@@ -13,6 +13,8 @@ export interface SocialLink {
 }
 
 export interface Hero {
+  __component: "layout.hero-section";
+  id: number;
   title: string;
   description: string;
   portada: Portada;

@@ -18,6 +18,7 @@ export interface VideoAbout {
 }
 
 export interface About {
+  __component: "layout.about-section";
   id: number;
   title: string;
   items: Item[];

@@ -1,4 +1,5 @@
 export interface FAQSectionType {
+  __component: "layout.faq-section";
   id: number;
   title: string;
   description: string;

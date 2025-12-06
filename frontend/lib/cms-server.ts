@@ -1,18 +1,19 @@
 import qs from "qs";
 import { QUERY_HOME_PAGE } from "./queries";
-import { transformHomePageData, HomePageData } from "../transformers/home";
+import { transformHomePageData } from "../transformers/home";
+import { Home } from "../types/home";
 
 const BASE_URL = process.env.NEXT_API_URL;
 
-export async function getHomePage(): Promise<HomePageData | null> {
+export async function getHomePage(): Promise<Home | null> {
   const query = qs.stringify(QUERY_HOME_PAGE);
   const response = await getCMSData(`/api/home-page?${query}`);
-
-  if (!response?.data?.sections) {
+  if (!response?.data.sections) {
     return null;
   }
 
-  return transformHomePageData(response.data.sections);
+  const homeData = transformHomePageData(response.data.sections);
+  return homeData;
 }
 
 export async function getCMSData(url: string) {
